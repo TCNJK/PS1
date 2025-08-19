@@ -1,3 +1,8 @@
+# Description: This script prevents the system from entering sleep mode by setting the thread execution state.
+# Usage: Run this script in PowerShell. It will keep the system awake until you stop it manually.
+# Commands: powershell -ExecutionPolicy Bypass -File .\NoSleep.ps1
+# Note: Use Ctrl+C to stop the script and allow the system to enter sleep mode again
+
 Add-Type @"
 using System;
 using System.Runtime.InteropServices;
@@ -14,4 +19,5 @@ $ES_DISPLAY_REQUIRED = [uint32]2
 [NoSleep]::SetThreadExecutionState($ES_CONTINUOUS -bor $ES_SYSTEM_REQUIRED -bor $ES_DISPLAY_REQUIRED)
 
 Write-Host "Ctrl+C to stop the script and allow sleep mode."
+
 while ($true) { Start-Sleep -Seconds 60 }
