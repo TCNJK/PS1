@@ -1,0 +1,11 @@
+join(
+  select(
+    variables('imagesArray'),
+    concat(
+      '<a href="', item()?['link'], '">',
+      last(split(item()?['link'], '/')),
+      '</a>'
+    )
+  ),
+  '<br/>'
+)

@@ -3,6 +3,11 @@
 # Commands: powershell -ExecutionPolicy Bypass -File .\NoSleep.ps1
 # Note: Use Ctrl+C to stop the script and allow the system to enter sleep mode again
 
+# copy con NoSleep.ps1
+# Paste the following code into the PowerShell script file
+# Save the file and run it in PowerShell to prevent sleep mode
+
+# NoSleep.ps1
 Add-Type @"
 using System;
 using System.Runtime.InteropServices;
