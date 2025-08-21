@@ -1,6 +1,6 @@
 join(
   select(
-    variables('imagesArray'),
+    variables('imagesArray'), //array change to map with code
     concat(
       '<a href="', item()?['link'], '">',
       last(split(item()?['link'], '/')),
