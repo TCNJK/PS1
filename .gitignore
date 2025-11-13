@@ -1,0 +1,2 @@
+# Ignore Excel macro-enabled files
+*.xlsm
