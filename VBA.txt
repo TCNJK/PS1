@@ -1,4 +1,0 @@
-Sub test()
-    Dim str As String
-    str = "Path.GetFileNameWithoutExtension(IO.Path.GetFullPath((filePath & ""_"" & (If(isTemp, ""tmp"", ""final"")) & ""_"" & (42 + 8).ToString()).Replace("" "", """").Replace(""\"",""/"").Replace(""/"",""\""))))"
-End Sub
