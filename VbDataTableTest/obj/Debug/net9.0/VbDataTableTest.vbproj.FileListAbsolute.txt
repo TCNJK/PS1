@@ -1,0 +1,15 @@
+E:\Code\PS1\VbDataTableTest\bin\Debug\net9.0\VbDataTableTest.exe
+E:\Code\PS1\VbDataTableTest\bin\Debug\net9.0\VbDataTableTest.deps.json
+E:\Code\PS1\VbDataTableTest\bin\Debug\net9.0\VbDataTableTest.runtimeconfig.json
+E:\Code\PS1\VbDataTableTest\bin\Debug\net9.0\VbDataTableTest.dll
+E:\Code\PS1\VbDataTableTest\bin\Debug\net9.0\VbDataTableTest.pdb
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.GeneratedMSBuildEditorConfig.editorconfig
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.AssemblyInfoInputs.cache
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.AssemblyInfo.vb
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.vbproj.CoreCompileInputs.cache
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.sourcelink.json
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.dll
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\refint\VbDataTableTest.dll
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.pdb
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\VbDataTableTest.genruntimeconfig.cache
+E:\Code\PS1\VbDataTableTest\obj\Debug\net9.0\ref\VbDataTableTest.dll

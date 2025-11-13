@@ -1,0 +1,45 @@
+'Input: inputTable (DataTable), currentTable (DataTable), keyColumn (String)
+'Output: resultTable (DataTable)
+
+resultTable = inputTable.Clone()
+
+Dim currentLookup As New System.Collections.Generic.Dictionary(Of String, System.Data.DataRow)()
+
+For Each currentRow As System.Data.DataRow In currentTable.Rows
+    Dim key As String = currentRow(keyColumn).ToString()
+    If Not currentLookup.ContainsKey(key) Then
+        currentLookup.Add(key, currentRow)
+    End If
+Next
+
+For Each inputRow As System.Data.DataRow In inputTable.Rows
+    Dim key As String = inputRow(keyColumn).ToString()
+    Dim currentRow As System.Data.DataRow = Nothing
+    Dim isDifferent As Boolean = True
+
+    If currentLookup.TryGetValue(key, currentRow) Then
+        isDifferent = False
+
+        For Each col As System.Data.DataColumn In inputTable.Columns
+            If Not col.ColumnName.Equals(keyColumn) Then
+                Dim val1 As String = ""
+                Dim val2 As String = ""
+
+                val1 = inputRow(col.ColumnName).ToString().Trim()
+
+                If Not System.DBNull.Value.Equals(currentRow(col.ColumnName)) Then
+                    val2 = currentRow(col.ColumnName).ToString().Trim()
+                End If
+
+                If Not val1.Equals(val2, System.StringComparison.OrdinalIgnoreCase) Then
+                    isDifferent = True
+                    Exit For
+                End If
+            End If
+        Next
+    End If
+
+    If isDifferent Then
+        resultTable.ImportRow(inputRow)
+    End If
+Next

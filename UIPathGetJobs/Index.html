@@ -1,0 +1,32 @@
+<button id="saveBtn">Lưu dữ liệu</button>
+
+<script>
+const data = [
+  { id: 1, name: "Job A", status: "Running" },
+  { id: 2, name: "Job B", status: "Completed" },
+];
+
+// Chọn định dạng: CSV
+function arrayToCSV(arr) {
+  const keys = Object.keys(arr[0]);
+  const csvRows = [keys.join(',')];
+  for (const item of arr) {
+    csvRows.push(keys.map(k => item[k]).join(','));
+  }
+  return csvRows.join('\n');
+}
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const csv = arrayToCSV(data); // Hoặc JSON.stringify(data, null, 2)
+  const blob = new Blob([csv], { type: 'text/csv' }); 
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'jobs.csv'; // tên file
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+</script>
