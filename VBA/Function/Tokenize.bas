@@ -13,11 +13,43 @@ Sub TestTokenize()
     Next
 End Sub
 
+Function DecodeHtmlEntities(ByVal s As String) As String
+    s = Replace(s, "&amp;", "&")
+    s = Replace(s, "&lt;", "<")
+    s = Replace(s, "&gt;", ">")
+    s = Replace(s, "&quot;", """")
+    s = Replace(s, "&apos;", "'")
+    s = Replace(s, "&#39;", "'")
+    s = Replace(s, "&#34;", """")
+    s = Replace(s, "&#40;", "(")
+    s = Replace(s, "&#41;", ")")
+    s = Replace(s, "&#43;", "+")
+    s = Replace(s, "&#45;", "-")
+    s = Replace(s, "&#47;", "/")
+    s = Replace(s, "&#92;", "\")
+    
+    ' Add more if needed...
+    
+    DecodeHtmlEntities = s
+End Function
+
+Function EscapeSpecialChar(ByVal s As String) As String
+    s = Replace(s, "%", "%%")
+    s = Replace(s, "\", "\\")
+    s = Replace(s, "'", "\'")
+    s = Replace(s, """", "\""")
+    
+    EscapeForPAD = s
+End Function
+
+
 Function ConvertTokenize(code As String) As Collection
     Dim tokens As New Collection
     Dim pos As Long: pos = 1
     Dim ch As String
     Dim tok As token
+    
+    code = DecodeHtmlEntities(code)
     
     Do While pos <= Len(code)
         ch = Mid(code, pos, 1)
